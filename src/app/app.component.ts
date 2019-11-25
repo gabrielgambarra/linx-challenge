@@ -14,4 +14,8 @@ export class AppComponent implements OnInit {
     this.isMobile = window.innerWidth < 700 ? true : false;
   }
 
+  openAboutLinx() {
+    window.open('https://www.linx.com.br/sobre-a-linx/');
+  }
+
 }

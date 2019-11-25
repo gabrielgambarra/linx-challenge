@@ -5,7 +5,7 @@
         <p class="resume">Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!</p>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center" class="nav-buttons">
-        <button mat-stroked-button fxFlex="20">
+        <button mat-stroked-button fxFlex="20" (click)="openAboutLinx()">
             <!-- If the screen is bigger than 700px, this text appears inside the button -->
             <span *ngIf="!isMobile">Conheça a Linx</span>
             <!-- If the screen is smaller than 700px, this icon appear inside the button -->
