@@ -1,0 +1,52 @@
+.header {
+  height: 40%;
+  background: #707070 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+  width: 100%;
+
+  .text-header {
+    p {
+      color: #ffffff;
+      font-family: Regular 20px/24px Helvetica Neue;
+
+      &.intro {
+        font-size: 20px;
+      }
+
+      &.big-text {
+        font-size: 40px;
+      }
+
+      &.resume {
+        padding-top: 2%;
+        font-size: 18px;
+      }
+    }
+  }
+  .nav-buttons {
+    width: 50%;
+    margin: 4% auto 0 auto;
+
+    button {
+      color: #888888;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #707070;
+      border-radius: 4px;
+    }
+  }
+}
+
+.footer {
+  height: 15%;
+  background: #707070 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+  small {
+    color: #ffffff;
+  }
+}
