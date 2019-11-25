@@ -30,7 +30,7 @@
 
     button {
       color: #888888;
-      background: #ffffff 0% 0% no-repeat padding-box;
+      background-color: #ffffff;
       border: 1px solid #707070;
       border-radius: 4px;
     }
@@ -39,7 +39,7 @@
 
 .footer {
   height: 15%;
-  background: #707070 0% 0% no-repeat padding-box;
+  background-color: #707070;
   border: 1px solid #707070;
   opacity: 1;
   width: 100%;
@@ -49,5 +49,45 @@
   small {
     font-family: Regular 20px/24px Helvetica Neue;
     color: #ffffff;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .header {
+    height: 50%;
+    .text-header {
+      p {
+        &.intro {
+          font-size: 18px;
+        }
+
+        &.big-text {
+          font-size: 30px;
+        }
+
+        &.resume {
+          text-align: center;
+          font-size: 15px;
+          padding-top: 5%;
+        }
+      }
+    }
+
+    .nav-buttons {
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 10%;
+
+      button {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .footer {
+    
+    small {
+      font-size: 12px;
+    }
   }
 }
