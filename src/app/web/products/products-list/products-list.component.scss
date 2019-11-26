@@ -1,5 +1,15 @@
 .products-container {
-    background-color: aqua;
-    width: 60%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+
+  app-product-item {
+    display: inline-block;
+  }
+
+  .load-more-products-button {
+    color: #888888;
+    margin-top: 2%;
+  }
 }

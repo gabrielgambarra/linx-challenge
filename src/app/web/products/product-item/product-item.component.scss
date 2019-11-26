@@ -1,0 +1,48 @@
+.item-container {
+  color: #888888;
+  height: 350px;
+  width: 200px;
+  display: inline-block;
+  margin: 30px;
+
+  .photo {
+    margin: 0 auto;
+
+    img {
+      border: 1px solid #707070;
+      width: 200px;
+      height: 150px;
+    }
+  }
+
+  .product-info {
+    text-align: start;
+    margin-top: 5%;
+    width: 200px;
+
+    .product-name {
+      font-weight: normal;
+    }
+
+    .description {
+      margin: 5% 0 0 0;
+    }
+
+    .price {
+      margin-top: 5%;
+
+      h3 {
+        padding: 5px 0;
+      }
+    }
+  }
+
+  .buy-section {
+    width: 200px;
+    margin-top: 5%;
+
+    button {
+      width: 100%;
+    }
+  }
+}

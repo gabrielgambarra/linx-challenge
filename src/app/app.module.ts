@@ -9,6 +9,7 @@ import { MaterialModule } from './shared/material-module/material.module';
 import { MainComponent } from './web/main/main/main.component';
 import { NewsletterFormComponent } from './web/newsletter/newsletter-form/newsletter-form.component';
 import { ProductsListComponent } from './web/products/products-list/products-list.component';
+import { ProductItemComponent } from './web/products/product-item/product-item.component';
 
 
 
@@ -17,7 +18,8 @@ import { ProductsListComponent } from './web/products/products-list/products-lis
     AppComponent,
     MainComponent,
     NewsletterFormComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,
