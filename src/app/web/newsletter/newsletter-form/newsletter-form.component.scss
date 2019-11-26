@@ -1,25 +1,33 @@
-p {
-  text-align: center;
-  max-width: 100%;
-}
+.newsletter-container {
+  width: 60%;
+  margin: 0 auto;
 
-.form {
-  margin-top: 40px;
-}
+  p {
+    text-align: center;
+    max-width: 100%;
+  }
 
-.send-button {
-  margin-bottom: 10%;
+  .form {
+    margin-top: 40px;
+  }
 
-  button {
-    width: 50%;
-    height: 45px;
+  .send-button {
+    margin-bottom: 10%;
+
+    button {
+      width: 50%;
+      height: 45px;
+    }
   }
 }
 
 @media only screen and (max-width: 700px) {
-  .form {
-    mat-form-field {
-      width: 90%;
+  .newsletter-container {
+    width: 100%;
+    .form {
+      mat-form-field {
+        width: 90%;
+      }
     }
   }
 }
