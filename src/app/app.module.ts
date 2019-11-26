@@ -8,6 +8,7 @@ import { ROUTES } from './app.routes';
 import { MaterialModule } from './shared/material-module/material.module';
 import { MainComponent } from './web/main/main/main.component';
 import { NewsletterFormComponent } from './web/newsletter/newsletter-form/newsletter-form.component';
+import { ProductsListComponent } from './web/products/products-list/products-list.component';
 
 
 
@@ -15,7 +16,8 @@ import { NewsletterFormComponent } from './web/newsletter/newsletter-form/newsle
   declarations: [
     AppComponent,
     MainComponent,
-    NewsletterFormComponent
+    NewsletterFormComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
