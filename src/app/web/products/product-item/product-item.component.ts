@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Product } from 'src/app/providers/models/product.model';
 
 @Component({
   selector: 'app-product-item',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductItemComponent implements OnInit {
 
+  @Input('product') product: Product;
+  @Input('i') i: number;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  // This function returns the path to image of product
+  getImageURL(): string {
+    return this.product.image;
   }
 
 }

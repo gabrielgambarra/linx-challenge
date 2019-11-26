@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1'
+  apiUrl: 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page='
 };
 
 /*

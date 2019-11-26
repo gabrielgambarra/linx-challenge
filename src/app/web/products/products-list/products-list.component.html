@@ -1,16 +1,8 @@
 <h3 class="section-title" fxLayoutAlign="center">Sua seleção especial</h3>
 <div class="products-container">
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
-
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
-    <app-product-item></app-product-item>
+    <app-product-item [product]="product" *ngFor="let product of products.products"></app-product-item>
 
     <div fxLayout="column" fxLayoutAlign="space-around center" class="load-more-products-button">
-        <button mat-stroked-button>Ainda mais produtos aqui!</button>
+        <button mat-stroked-button (click)="loadMoreProducts()">Ainda mais produtos aqui!</button>
     </div>
 </div>
