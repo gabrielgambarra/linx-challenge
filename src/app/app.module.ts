@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
 import { MaterialModule } from './shared/material-module/material.module';
 import { MainComponent } from './web/main/main/main.component';
+import { NewsletterFormComponent } from './web/newsletter/newsletter-form/newsletter-form.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    NewsletterFormComponent
   ],
   imports: [
     BrowserModule,

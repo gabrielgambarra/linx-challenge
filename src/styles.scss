@@ -13,4 +13,11 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-y: auto;
+
+  // Here I create a global style for each section title
+  .section-title {
+    margin: 40px auto;
+    font-weight: normal;
+  }
 }
