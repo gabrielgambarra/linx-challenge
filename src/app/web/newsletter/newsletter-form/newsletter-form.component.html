@@ -11,7 +11,11 @@
         <div *ngIf="!isMobile" fxFlex="10"></div>
         <mat-form-field fxFlex="45" appearance="outline" floatLabel="always">
             <mat-label>E-mail</mat-label>
-            <input matInput>
+            <input matInput type="email" ngModel [formControl]="email" [pattern]="emailPattern">
+
+            <mat-error *ngIf="email.errors?.pattern">
+                Email inválido
+            </mat-error>
         </mat-form-field>
     </div>
 

@@ -11,6 +11,7 @@ import { NewsletterFormComponent } from './web/newsletter/newsletter-form/newsle
 import { ProductsListComponent } from './web/products/products-list/products-list.component';
 import { ProductItemComponent } from './web/products/product-item/product-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     FlexLayoutModule,
     RouterModule.forRoot(ROUTES),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
