@@ -9,7 +9,6 @@ import { Product } from 'src/app/providers/models/product.model';
 export class ProductItemComponent implements OnInit {
 
   @Input('product') product: Product;
-  @Input('i') i: number;
 
   constructor() { }
 

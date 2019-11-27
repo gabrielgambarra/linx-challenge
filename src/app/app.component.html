@@ -1,42 +1,72 @@
-<div fxLayout="column" fxLayoutAlign="center" class="header">
-    <div fxLayout="column" fxLayoutAlign="center center" class="text-header">
-        <p class="intro">Uma seleção de produtos</p>
-        <p class="big-text">especial para você</p>
-        <p class="resume">Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!</p>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="center center" class="nav-buttons">
-        <a mat-stroked-button (click)="openAboutLinx()">
-            <!-- If the screen is bigger than 700px, this text appears inside the button -->
-            <span *ngIf="!isMobile">Conheça a Linx</span>
-            <!-- If the screen is smaller than 700px, this icon appear inside the button -->
-            <mat-icon *ngIf="isMobile">info</mat-icon>
-        </a>
-        <div fxFlex="5"></div>
-        <a mat-stroked-button>
-            <span *ngIf="!isMobile">Ajude o algorítimo</span>
-            <mat-icon *ngIf="isMobile">trending_up</mat-icon>
-        </a>
-        <div fxFlex="5"></div>
-        <a mat-stroked-button href="#products">
-            <span *ngIf="!isMobile">Seus produtos</span>
-            <mat-icon *ngIf="isMobile">shopping_cart</mat-icon>
-        </a>
-        <div fxFlex="5"></div>
-        <a mat-stroked-button href="#newsletter">
-            <span *ngIf="!isMobile">Compartilhe</span>
-            <mat-icon *ngIf="isMobile">share</mat-icon>
-        </a>
-    </div>
-</div>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <div class="sidenav-container">
+            <p>
+                <a (click)="sidenav.close()" mat-button href="https://www.linx.com.br/sobre-a-linx/" target="_blank">
+                    <!-- If the screen is bigger than 700px, this text appears inside the button -->
+                    <span>Conheça a Linx</span>
+                    <!-- If the screen is smaller than 700px, this icon appear inside the button -->
+                    <!-- <mat-icon *ngIf="isMobile">info</mat-icon> -->
+                </a>
+            </p>
+            <p>
+                <a (click)="sidenav.close()" mat-button>
+                    <span>Ajude o algorítimo</span>
+                </a>
+            </p>
+            <p>
+                <a (click)="sidenav.close()" mat-button href="#products">
+                    <span>Seus produtos</span>
+                </a>
+            </p>
+            <p>
+                <a (click)="sidenav.close()" mat-button href="#newsletter">
+                    <span>Compartilhe</span>
+                </a>
+            </p>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <button class="nav-button" mat-mini-fab (click)="sidenav.open()">
+            <mat-icon>sort</mat-icon>
+        </button>
+        <div fxLayout="column" fxLayoutAlign="center" class="header">
+            <div fxLayout="column" fxLayoutAlign="center center" class="text-header">
+                <p class="intro">Uma seleção de produtos</p>
+                <p class="big-text">especial para você</p>
+                <p class="resume">Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!
+                </p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" class="nav-buttons" *ngIf="!isMobile">
+                <a mat-stroked-button href="https://www.linx.com.br/sobre-a-linx/" target="_blank">
+                    <!-- If the screen is bigger than 700px, this text appears inside the button -->
+                    <span *ngIf="!isMobile">Conheça a Linx</span>
+                </a>
+                <div fxFlex="5"></div>
+                <a mat-stroked-button>
+                    <span *ngIf="!isMobile">Ajude o algorítimo</span>
+                </a>
+                <div fxFlex="5"></div>
+                <a mat-stroked-button href="#products">
+                    <span *ngIf="!isMobile">Seus produtos</span>
+                </a>
+                <div fxFlex="5"></div>
+                <a mat-stroked-button href="#newsletter">
+                    <span *ngIf="!isMobile">Compartilhe</span>
+                </a>
+            </div>
+        </div>
 
-<div fxLayout="column" fxLayoutAlign="center none">
-    <router-outlet></router-outlet>
-</div>
+        <div fxLayout="column" fxLayoutAlign="center none">
+            <router-outlet></router-outlet>
+        </div>
 
-<div fxLayout="row" fxLayoutAlign="center" class="footer">
-    <div fxLayout="column" fxLayoutAlign="center center">
-        <small>Testando suas habilidades em HTML, CSS e JS.</small>
-        <small>Linx Impulse</small>
-        <small>2019</small>
-    </div>
-</div>
+        <div fxLayout="row" fxLayoutAlign="center" class="footer">
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <small>Testando suas habilidades em HTML, CSS e JS.</small>
+                <small>Linx Impulse</small>
+                <small>2019</small>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
