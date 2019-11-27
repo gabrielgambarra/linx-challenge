@@ -27,7 +27,7 @@
         </div>
     </mat-sidenav>
     <mat-sidenav-content>
-        <button class="nav-button" mat-mini-fab (click)="sidenav.open()">
+        <button *ngIf="isMobile" class="nav-button" mat-mini-fab (click)="sidenav.open()">
             <mat-icon>sort</mat-icon>
         </button>
         <div fxLayout="column" fxLayoutAlign="center" class="header">
