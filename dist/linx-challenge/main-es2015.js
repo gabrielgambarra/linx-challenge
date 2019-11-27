@@ -507,18 +507,23 @@ let NewsletterFormComponent = class NewsletterFormComponent {
         this.emailService = emailService;
         this.emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         this.isMobile = false;
-        this.email = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('');
-        this.name = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('');
+        this.email = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null);
+        this.name = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null);
         this.body = new src_app_providers_models_email_model__WEBPACK_IMPORTED_MODULE_3__["Email"]();
     }
     ngOnInit() {
         this.isMobile = window.innerWidth < 700 ? true : false;
     }
+    // This function will send the name and email given by user and send a example email
     send() {
-        this.body.name = this.name.value;
-        this.body.email = this.email.value;
-        this.emailService.sendEmail(this.body).subscribe(success => {
-        });
+        // Check if user typed name and email. If not, the button will make nothing
+        if (this.name.value && this.email.value) {
+            this.body.name = this.name.value;
+            this.body.email = this.email.value;
+            this.emailService.sendEmail(this.body).subscribe(success => {
+            });
+        }
+        return;
     }
 };
 NewsletterFormComponent.ctorParameters = () => [
