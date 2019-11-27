@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page='
+  apiUrl: 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=',
+  emailServer: 'https://back-email.herokuapp.com/'
 };
 
 /*

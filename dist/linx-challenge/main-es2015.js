@@ -52,7 +52,7 @@ module.exports = "<div fxLayout=\"column\" class=\"main-container\">\n    <app-p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"newsletter\" fxLayout=\"column\" fxLayoutAlign=\"center\" class=\"newsletter-container\">\n    <h3 class=\"section-title\" fxLayoutAlign=\"center\">Compartilhe a novidade</h3>\n\n    <p fxLayoutAlign=\"center\">Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>\n\n    <div [fxLayout]=\"isMobile ? 'column' : 'row'\" fxLayoutAlign=\"center center\" class=\"form\">\n        <mat-form-field fxFlex=\"45\" appearance=\"outline\" floatLabel=\"always\">\n            <mat-label>Nome do seu amigo</mat-label>\n            <input matInput>\n        </mat-form-field>\n        <div *ngIf=\"!isMobile\" fxFlex=\"10\"></div>\n        <mat-form-field fxFlex=\"45\" appearance=\"outline\" floatLabel=\"always\">\n            <mat-label>E-mail</mat-label>\n            <input matInput type=\"email\" ngModel [formControl]=\"email\" [pattern]=\"emailPattern\">\n\n            <mat-error *ngIf=\"email.errors?.pattern\">\n                Email inválido\n            </mat-error>\n        </mat-form-field>\n    </div>\n\n    <div fxLayout=\"column\" fxLayoutAlign=\"space-around center\" class=\"send-button\">\n        <button mat-stroked-button>Enviar agora</button>\n    </div>\n\n</div>"
+module.exports = "<div id=\"newsletter\" fxLayout=\"column\" fxLayoutAlign=\"center\" class=\"newsletter-container\">\n    <h3 class=\"section-title\" fxLayoutAlign=\"center\">Compartilhe a novidade</h3>\n\n    <p fxLayoutAlign=\"center\">Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>\n\n    <div [fxLayout]=\"isMobile ? 'column' : 'row'\" fxLayoutAlign=\"center center\" class=\"form\">\n        <mat-form-field fxFlex=\"45\" appearance=\"outline\" floatLabel=\"always\">\n            <mat-label>Nome do seu amigo</mat-label>\n            <input matInput [formControl]=\"name\">\n        </mat-form-field>\n        <div *ngIf=\"!isMobile\" fxFlex=\"10\"></div>\n        <mat-form-field fxFlex=\"45\" appearance=\"outline\" floatLabel=\"always\">\n            <mat-label>E-mail</mat-label>\n            <input matInput type=\"email\" ngModel [formControl]=\"email\" [pattern]=\"emailPattern\">\n\n            <mat-error *ngIf=\"email.errors?.pattern\">\n                Email inválido\n            </mat-error>\n        </mat-form-field>\n    </div>\n\n    <div fxLayout=\"column\" fxLayoutAlign=\"space-around center\" class=\"send-button\">\n        <button mat-stroked-button (click)=\"send()\">Enviar agora</button>\n    </div>\n\n</div>"
 
 /***/ }),
 
@@ -212,6 +212,22 @@ const ROUTES = [
 
 /***/ }),
 
+/***/ "./src/app/providers/models/email.model.ts":
+/*!*************************************************!*\
+  !*** ./src/app/providers/models/email.model.ts ***!
+  \*************************************************/
+/*! exports provided: Email */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Email", function() { return Email; });
+class Email {
+}
+
+
+/***/ }),
+
 /***/ "./src/app/providers/models/product-obj.model.ts":
 /*!*******************************************************!*\
   !*** ./src/app/providers/models/product-obj.model.ts ***!
@@ -227,6 +243,46 @@ class ProductObj {
         this.products = [];
     }
 }
+
+
+/***/ }),
+
+/***/ "./src/app/providers/services/newsletter.service.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/providers/services/newsletter.service.ts ***!
+  \**********************************************************/
+/*! exports provided: NewsletterService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewsletterService", function() { return NewsletterService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+let NewsletterService = class NewsletterService {
+    constructor(http) {
+        this.http = http;
+        this.emailUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].emailServer;
+    }
+    sendEmail(email) {
+        return this.http.post(`${this.emailUrl}`, email);
+    }
+};
+NewsletterService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+NewsletterService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], NewsletterService);
+
 
 
 /***/ }),
@@ -439,19 +495,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var src_app_providers_models_email_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/providers/models/email.model */ "./src/app/providers/models/email.model.ts");
+/* harmony import */ var src_app_providers_services_newsletter_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/providers/services/newsletter.service */ "./src/app/providers/services/newsletter.service.ts");
+
+
 
 
 
 let NewsletterFormComponent = class NewsletterFormComponent {
-    constructor() {
+    constructor(emailService) {
+        this.emailService = emailService;
         this.emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         this.isMobile = false;
         this.email = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('');
+        this.name = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('');
+        this.body = new src_app_providers_models_email_model__WEBPACK_IMPORTED_MODULE_3__["Email"]();
     }
     ngOnInit() {
         this.isMobile = window.innerWidth < 700 ? true : false;
     }
+    send() {
+        this.body.name = this.name.value;
+        this.body.email = this.email.value;
+        this.emailService.sendEmail(this.body).subscribe(success => {
+        });
+    }
 };
+NewsletterFormComponent.ctorParameters = () => [
+    { type: src_app_providers_services_newsletter_service__WEBPACK_IMPORTED_MODULE_4__["NewsletterService"] }
+];
 NewsletterFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-newsletter-form',
@@ -595,7 +667,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    apiUrl: 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page='
+    apiUrl: 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=',
+    emailServer: 'https://back-email.herokuapp.com/'
 };
 /*
  * For easier debugging in development mode, you can import the following file

@@ -6,7 +6,7 @@
     <div [fxLayout]="isMobile ? 'column' : 'row'" fxLayoutAlign="center center" class="form">
         <mat-form-field fxFlex="45" appearance="outline" floatLabel="always">
             <mat-label>Nome do seu amigo</mat-label>
-            <input matInput>
+            <input matInput [formControl]="name">
         </mat-form-field>
         <div *ngIf="!isMobile" fxFlex="10"></div>
         <mat-form-field fxFlex="45" appearance="outline" floatLabel="always">
@@ -20,7 +20,7 @@
     </div>
 
     <div fxLayout="column" fxLayoutAlign="space-around center" class="send-button">
-        <button mat-stroked-button>Enviar agora</button>
+        <button mat-stroked-button (click)="send()">Enviar agora</button>
     </div>
 
 </div>
