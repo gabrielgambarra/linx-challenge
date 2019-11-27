@@ -3,10 +3,7 @@
         <div class="sidenav-container">
             <p>
                 <a (click)="sidenav.close()" mat-button href="https://www.linx.com.br/sobre-a-linx/" target="_blank">
-                    <!-- If the screen is bigger than 700px, this text appears inside the button -->
                     <span>Conheça a Linx</span>
-                    <!-- If the screen is smaller than 700px, this icon appear inside the button -->
-                    <!-- <mat-icon *ngIf="isMobile">info</mat-icon> -->
                 </a>
             </p>
             <p>
@@ -39,7 +36,6 @@
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" class="nav-buttons" *ngIf="!isMobile">
                 <a mat-stroked-button href="https://www.linx.com.br/sobre-a-linx/" target="_blank">
-                    <!-- If the screen is bigger than 700px, this text appears inside the button -->
                     <span>Conheça a Linx</span>
                 </a>
                 <div fxFlex="5"></div>
