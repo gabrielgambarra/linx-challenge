@@ -110,6 +110,12 @@ let AppComponent = class AppComponent {
     ngOnInit() {
         // Check if screen mobile to apply responsiveness
         this.isMobile = window.innerWidth < 700 ? true : false;
+        window.addEventListener("resize", () => {
+            this.displayWindowSize();
+        });
+    }
+    displayWindowSize() {
+        this.isMobile = window.innerWidth < 700 ? true : false;
     }
 };
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -513,6 +519,9 @@ let NewsletterFormComponent = class NewsletterFormComponent {
     }
     ngOnInit() {
         this.isMobile = window.innerWidth < 700 ? true : false;
+        window.addEventListener("resize", () => {
+            this.displayWindowSize();
+        });
     }
     // This function will send the name and email given by user and send a example email
     send() {
@@ -524,6 +533,9 @@ let NewsletterFormComponent = class NewsletterFormComponent {
             });
         }
         return;
+    }
+    displayWindowSize() {
+        this.isMobile = window.innerWidth < 700 ? true : false;
     }
 };
 NewsletterFormComponent.ctorParameters = () => [

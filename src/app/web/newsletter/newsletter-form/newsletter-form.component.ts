@@ -23,22 +23,29 @@ export class NewsletterFormComponent implements OnInit {
 
   ngOnInit() {
     this.isMobile = window.innerWidth < 700 ? true : false;
+    window.addEventListener("resize", () => {
+      this.displayWindowSize();
+    })
   }
 
   // This function will send the name and email given by user and send a example email
   send(): void {
 
     // Check if user typed name and email. If not, the button will make nothing
-    if(this.name.value && this.email.value) {
-      
+    if (this.name.value && this.email.value) {
+
       this.body.name = this.name.value;
       this.body.email = this.email.value;
-  
+
       this.emailService.sendEmail(this.body).subscribe(success => {
       });
     }
 
     return;
+  }
+
+  displayWindowSize() {
+    this.isMobile = window.innerWidth < 700 ? true : false;
   }
 
 }

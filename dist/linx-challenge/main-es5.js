@@ -108,7 +108,14 @@ var AppComponent = /** @class */ (function () {
         this.isMobile = false;
     }
     AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
         // Check if screen mobile to apply responsiveness
+        this.isMobile = window.innerWidth < 700 ? true : false;
+        window.addEventListener("resize", function () {
+            _this.displayWindowSize();
+        });
+    };
+    AppComponent.prototype.displayWindowSize = function () {
         this.isMobile = window.innerWidth < 700 ? true : false;
     };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -529,7 +536,11 @@ var NewsletterFormComponent = /** @class */ (function () {
         this.body = new src_app_providers_models_email_model__WEBPACK_IMPORTED_MODULE_3__["Email"]();
     }
     NewsletterFormComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.isMobile = window.innerWidth < 700 ? true : false;
+        window.addEventListener("resize", function () {
+            _this.displayWindowSize();
+        });
     };
     // This function will send the name and email given by user and send a example email
     NewsletterFormComponent.prototype.send = function () {
@@ -541,6 +552,9 @@ var NewsletterFormComponent = /** @class */ (function () {
             });
         }
         return;
+    };
+    NewsletterFormComponent.prototype.displayWindowSize = function () {
+        this.isMobile = window.innerWidth < 700 ? true : false;
     };
     NewsletterFormComponent.ctorParameters = function () { return [
         { type: src_app_providers_services_newsletter_service__WEBPACK_IMPORTED_MODULE_4__["NewsletterService"] }
